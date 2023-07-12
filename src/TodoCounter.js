@@ -1,11 +1,18 @@
 
 
-function TodoCounter({total, completed}) {
+function TodoCounter({total, liked}) {
     return (
         <div className="mb-1">
-            <h1 className="px-6 py-2 font-bold text-xl mb-2">
-                Has completado {completed} de {total} TODOS
-            </h1>
+            <div  className=" flex justify-center">
+                <h1 className=" font-bold text-4xl">
+                    Tareas
+                </h1>
+            </div>
+            <div className=" flex justify-center">
+                <h1 className=" font-bold">
+                Completadas {liked} de {total} 
+                </h1>
+            </div>
         </div>
     );
   }
