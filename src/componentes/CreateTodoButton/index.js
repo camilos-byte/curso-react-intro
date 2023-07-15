@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { ButtonGroup } from "@chakra-ui/react" 
-import imagen from './imagen2.png'
+import imagen from '../../imagen2.png'
 
 function CreateTodoButton({Button,Input}) {
     const [name, setName] = useState('');
     const [todos, setTodos] = useState([]);
-
     async function clic(e) {
         e.preventDefault ();
         //Ahora leemos los datos del formulario 
