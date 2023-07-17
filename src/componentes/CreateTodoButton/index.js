@@ -13,11 +13,7 @@ function CreateTodoButton({Button,Input}) {
         const formJson = Object.fromEntries(formData.entries());
         if (formJson.task !== '') {
             setTodos([...todos,{ id: todos.length,text: formJson.task}])   
-        } else {
-            console.log('HOLA PERAAA');
-        }
-
-      console.log(todos); 
+        } 
     }
 
     return (

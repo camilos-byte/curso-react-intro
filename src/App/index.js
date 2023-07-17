@@ -3,22 +3,31 @@ import { TodoCounter } from '../componentes/TodoCounter';
 import { TodoSearch } from '../componentes/TodoSearch';
 import { TodoList } from '../componentes/TodoList';
 import { TodoItem } from '../componentes/TodoItem';
+import { TodosLoading } from '../componentes/TodosLoading';
+import { TodosError } from '../componentes/TodosError';
+import { EmptyTodos } from '../componentes/EmptyTodos';
 import { CreateTodoButton } from '../componentes/CreateTodoButton';
 import {useLocalStorage} from './useLocalStorage'   
 import { ChakraProvider, Card, CardHeader, CardBody,Stack ,Input, Box, Spacer } from '@chakra-ui/react'
 import { Button } from '@rewind-ui/core';
 
+
+
 function App() {
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1',[]);
+  const {item:todos,
+     saveItem:saveTodos,
+      loading,
+       error
+      } = useLocalStorage('TODOS_V1',[]);
   const [searchValue, setSearchValue] = React.useState('');
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
+
 
   const searchedTodos = todos.filter (
     (todo) => { 
     return todo.text.includes(searchValue);
   });
-
 
   const completeTodo = (text) => {
     const newTodos = [...todos];
@@ -48,36 +57,38 @@ saveTodos(newTodos);
               </Card>
             </Box >
             <Box padding='10' mt={{ base: 4, md: 4 }} ml={{ md: 6 }}>
-              {
-                    totalTodos > 1  ?
                 <Card >
                   <CardHeader>  
                   <TodoCounter completed= {completedTodos} total ={totalTodos} />
                   </CardHeader>
                   <CardBody>
                   <TodoSearch Input={Input} searchValue ={searchValue} setSearchValue ={setSearchValue} />
-                  <TodoList >
-                  <Stack>
-                    {searchedTodos.map(todo =>
-                    <Card key={todo.text}>
-                      <CardBody>
-                        <TodoItem 
-                        key={todo.text} 
-                        text={todo.text} 
-                        completed={todo.completed}
-                        onComplete={ ()=>completeTodo (todo.text)}
-                        onDelete={ ()=>deleteTodo (todo.text)}
-                        />
-                      </CardBody>
-                    </Card>
-                      )}
+                    <TodoList >
+                  {loading && (
+                    <>
+                      <TodosLoading/>
+                    </>
+                  )}
+                  {error && <TodosError/>}
+                  {(!loading && searchedTodos.length === 0) && <EmptyTodos/> }
+                    <Stack>
+                      {searchedTodos.map(todo =>
+                      <Card key={todo.text}>
+                        <CardBody>
+                          <TodoItem 
+                          key={todo.text} 
+                          text={todo.text} 
+                          completed={todo.completed}
+                          onComplete={ ()=>completeTodo (todo.text)}
+                          onDelete={ ()=>deleteTodo (todo.text)}
+                          />
+                        </CardBody>
+                      </Card>
+                        )}
                     </Stack>
-                  </TodoList>
+                    </TodoList>
                   </CardBody>
                 </Card>
-                  :
-                  ''
-                }
             </Box>   
        </Box >
     </ChakraProvider>
