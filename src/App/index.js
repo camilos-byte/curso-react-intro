@@ -7,8 +7,8 @@ import { TodosLoading } from '../componentes/TodosLoading';
 import { TodosError } from '../componentes/TodosError';
 import { EmptyTodos } from '../componentes/EmptyTodos';
 import { CreateTodoButton } from '../componentes/CreateTodoButton';
-import {useLocalStorage} from './useLocalStorage'   
-import { ChakraProvider, Card, CardHeader, CardBody,Stack ,Input, Box, Spacer } from '@chakra-ui/react'
+import {useLocalStorage} from './useLocalStorage';   
+import { ChakraProvider, Card, CardHeader, CardBody,Stack ,Input, Box, Spacer} from '@chakra-ui/react'
 import { Button } from '@rewind-ui/core';
 
 
@@ -26,12 +26,21 @@ function App() {
 
   const searchedTodos = todos.filter (
     (todo) => { 
-    return todo.text.includes(searchValue);
+      // return console.log(todo.text);
+    return todo.text.text.includes(searchValue);
+
   });
 
+
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({text,completed:false});
+    saveTodos(newTodos);
+  }
+  
   const completeTodo = (text) => {
     const newTodos = [...todos];
-   const todoIndex =  newTodos.findIndex((todo) => todo.text === text);
+   const todoIndex =  newTodos.findIndex((todo) => todo.text.text === text);
     newTodos[todoIndex].completed === true
     ? (newTodos[todoIndex].completed = false)
     : (newTodos[todoIndex].completed = true);
@@ -40,7 +49,7 @@ function App() {
   
   const deleteTodo = (text) => {
     const newTodos = [...todos];
-   const todoIndex =  newTodos.findIndex((todo) => todo.text === text);
+   const todoIndex =  newTodos.findIndex((todo) => todo.text.text === text);
 newTodos.splice(todoIndex, 1)
 saveTodos(newTodos);
   }
@@ -52,7 +61,7 @@ saveTodos(newTodos);
             <Box padding='1'>
               <Card >
                 <CardBody >
-                  <CreateTodoButton  Button={Button} Input={Input}/>
+                  <CreateTodoButton  Button={Button} Input={Input} addTodo={addTodo}/>
                 </CardBody>
               </Card>
             </Box >
@@ -73,14 +82,14 @@ saveTodos(newTodos);
                   {(!loading && searchedTodos.length === 0) && <EmptyTodos/> }
                     <Stack>
                       {searchedTodos.map(todo =>
-                      <Card key={todo.text}>
+                      <Card key={todo.text.text}>
                         <CardBody>
                           <TodoItem 
-                          key={todo.text} 
-                          text={todo.text} 
+                          key={todo.text.text} 
+                          text={todo.text.text} 
                           completed={todo.completed}
-                          onComplete={ ()=>completeTodo (todo.text)}
-                          onDelete={ ()=>deleteTodo (todo.text)}
+                          onComplete={ ()=>completeTodo (todo.text.text)}
+                          onDelete={ ()=>deleteTodo (todo.text.text)}
                           />
                         </CardBody>
                       </Card>

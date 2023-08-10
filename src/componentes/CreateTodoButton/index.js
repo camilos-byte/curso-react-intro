@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { ButtonGroup } from "@chakra-ui/react" 
 import imagen from '../../imagen2.png'
 
-function CreateTodoButton({Button,Input}) {
-    const [name, setName] = useState('');
-    const [todos, setTodos] = useState([]);
+
+function CreateTodoButton({Button,Input,addTodo}) {
+    let [name, setName] = useState('');
+    // const [todos, setTodos] = useState([]);
     async function clic(e) {
         e.preventDefault ();
         //Ahora leemos los datos del formulario 
@@ -12,8 +13,11 @@ function CreateTodoButton({Button,Input}) {
         const formData = new FormData(form);
         const formJson = Object.fromEntries(formData.entries());
         if (formJson.task !== '') {
-            setTodos([...todos,{ id: todos.length,text: formJson.task}])   
+            addTodo({ id: 1,text: formJson.task}) 
+            form.reset();
+            setName('');
         } 
+        
     }
 
     return (
@@ -25,13 +29,13 @@ function CreateTodoButton({Button,Input}) {
             </div>
             <label className="font-bold">Nueva Tarea</label>
                     <form method="post" onSubmit={clic}>
-                <ButtonGroup >
-                        <Input name='task'  value={name}  onChange={ e => {setName(e.target.value)}}/>
-                        <Button type="submit"  variant="bg-transparent hover:bg-blue-500 text-blue-700 font-bold hover:text-white border border-blue-500 hover:border-transparent rounded">
-                            Agregar
-                        </Button>
-                </ButtonGroup>
-                <p>Escribiste: {name}</p>
+                        <ButtonGroup >
+                                <Input name='task'  value={name}  onChange={ e => {setName(e.target.value)}}/>
+                                <Button type="submit"  variant="bg-transparent hover:bg-blue-500 text-blue-700 font-bold hover:text-white border border-blue-500 hover:border-transparent rounded">
+                                    Agregar
+                                </Button>
+                        </ButtonGroup>
+                        <p>Escribiste: {name}</p>
                     </form>
                 <img src={imagen} alt="" width='170px' className="mx-auto mt-7 mb-2" />
         </div>
