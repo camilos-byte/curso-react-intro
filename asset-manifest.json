@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/camilos-byte/curso-react-intro/static/css/main.512f764a.css",
-    "main.js": "/camilos-byte/curso-react-intro/static/js/main.481e4702.js",
-    "static/media/imagen2.png": "/camilos-byte/curso-react-intro/static/media/imagen2.e71871ce414169b49616.png",
-    "index.html": "/camilos-byte/curso-react-intro/index.html",
-    "main.512f764a.css.map": "/camilos-byte/curso-react-intro/static/css/main.512f764a.css.map",
-    "main.481e4702.js.map": "/camilos-byte/curso-react-intro/static/js/main.481e4702.js.map"
+    "main.css": "/curso-react-intro/static/css/main.512f764a.css",
+    "main.js": "/curso-react-intro/static/js/main.d71f4d23.js",
+    "static/media/imagen2.png": "/curso-react-intro/static/media/imagen2.e71871ce414169b49616.png",
+    "index.html": "/curso-react-intro/index.html",
+    "main.512f764a.css.map": "/curso-react-intro/static/css/main.512f764a.css.map",
+    "main.d71f4d23.js.map": "/curso-react-intro/static/js/main.d71f4d23.js.map"
   },
   "entrypoints": [
     "static/css/main.512f764a.css",
-    "static/js/main.481e4702.js"
+    "static/js/main.d71f4d23.js"
   ]
 }
