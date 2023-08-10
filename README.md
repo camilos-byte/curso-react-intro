@@ -1,80 +1,62 @@
 <<<<<<< HEAD
-# Repositorio base del Curso de Introducción a React.js en Platzi
 
-¡Hola, Platzinauta!
+Crear Tareas es un sitio web diseñado para ayudarlo a administrar sus tareas pendientes y las metas que desea lograr con solo crear una lista de elementos de las tareas pendientes que desea completar en un futuro cercano. No hay límite en la cantidad de tareas que puedes crear (pero es mejor no tener tantas tareas pendientes😉). Una vez que haya terminado una tarea existente, puede marcarla como completada y la tarea pendiente seleccionada irá al final de su lista, también puede eliminarla de su lista simplemente presionando el botón de la papelera.
+No seas tímido y pruébalo tú mismo,
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+![image](https://github.com/camilos-byte/curso-react-intro/assets/64440659/bae8e8e5-d056-4fac-b7e2-66d8a5ed385a)
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+Installation Steps:
+If you want to make changes to the source code you just need to:
 
-## Getting Started with Create React App
+Do a (git clone).
+Install all the dependencies (npm i).
+Execute and enjoy the app (npm start).
+The process
+Built with
+Technologies used in the project:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React 18.2.0
+web-vitals 3.4.0
+iOS 13.4.1
+Useful resources
+Figma - Used to create graphics.
+React and Components - A guide to React and Components.
+License:
+This project is licensed under the MIT License
 
-## Available Scripts
+Author
+Made with Camilo salgado 
 
+
+React Documentation ⬇️
+Getting Started with Create React App
+This project was bootstrapped with Create React App.
+
+Available Scripts
 In the project directory, you can run:
 
-### `npm start`
+npm start
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
+npm run build
+Builds the app for production to the build folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See the section about deployment for more information.
 
-### `npm run eject`
+npm run eject
+Note: this is a one-way operation. Once you eject, you can't go back!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you aren't satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# curso-react-intro
-curso react intro
->>>>>>> b21808233815194fe31c186f9734b31cb2230e42
+You don't have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
