@@ -5,7 +5,9 @@ No seas tímido y pruébalo tú mismo,
 
 ![image](https://github.com/camilos-byte/curso-react-intro/assets/64440659/bae8e8e5-d056-4fac-b7e2-66d8a5ed385a)
 
-##Tabla de contenido[Installation Steps:]
+##Tabla de contenido
+
+[Installation Steps:](If you want to make changes to the source code you just need to:)
 
 
 [Installation Steps:] (If you want to make changes to the source code you just need to:)
